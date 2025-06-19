@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wallet</title>
+  <link rel="stylesheet" href="wallet.css" />
+</head>
+
+<body>
+  <nav>
+    <img src="images/logo.png" class="logo" />
+    <h1>Fiction <span class="name">Digitals</span></h1>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Market.html">Market</a></li>
+      <li><a class="active" href="wallet.html">Wallet</a></li>
+      <li><a href="About.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <header>
+      <h1>My Crypto Wallet</h1>
+      <p>Secure | Fast | Reliable</p>
+    </header>
+
+    <div class="wallet">
+      <div class="balance">
+        Wallet Balance in Bitcoin: <strong id="wallet-balance">571</strong>
+      </div>
+
+      <div class="transaction-history">
+        <h3>Transaction History</h3>
+        <ul id="transactions">
+          <li>-0.3 BTC to Muayesh</li>
+          <li>+0.5 BTC from Ghaffar</li>
+          <li>+1.2 BTC from Amir</li>
+          <li>-4.7 BTC to Sufyan</li>
+        </ul>
+      </div>
+
+      <div class="transaction-form">
+        <h3>Send Crypto</h3>
+        <input type="text" id="toAddress" placeholder="Recipient Address" />
+        <input type="number" id="amount" placeholder="Amount (BTC)" />
+        <button onclick="sendCrypto()">Send</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="Logo" />
+        <h2>Fiction <span class="name">Digitals</span></h2>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="Market.html">Market</a>
+        <a href="wallet.html">Wallet</a>
+        <a href="About.html">About Us</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Fiction Digitals. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+
+    function sendCrypto() {
+      const address = document.getElementById('toAddress').value;
+      const amount = document.getElementById('amount').value;
+      const transactions = document.getElementById('transactions');
+      const walletBalance = document.getElementById("wallet-balance")
+
+      if (address && amount > 0) {
+        const li = document.createElement('li');
+        li.textContent = `-${amount} BTC to ${address}`;
+        transactions.insertBefore(li, transactions.firstChild);
+        transactions.lastElementChild.remove()
+
+        alert(`Sent ${amount} BTC to ${address}`);
+        document.getElementById('toAddress').value = '';
+        document.getElementById('amount').value = '';
+        if (walletBalance.innerHTML > 0) {
+          walletBalance.innerHTML = walletBalance.innerHTML - amount
+        } else {
+          walletBalance.innerHTML = '571'
+        }
+
+      } else {
+        alert("Please enter valid address and amount.");
+      }
+    }
+  </script>
+</body>
+
+</html>

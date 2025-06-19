@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fiction Digitals</title>
+  <link rel="stylesheet" href="Index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <img src="images/logo.png" class="logo" />
+      <h1>Fiction <span class="name">Digitals</span></h1>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <ul id="nav-menu">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="Market.html">Market</a></li>
+        <li><a href="wallet.html">Wallet</a></li>
+        <li><a href="About.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <div class="slider">
+    <div class="slides">
+      <img class="slide" src="images/slid5.jpeg" alt="Image #1">
+      <img class="slide" src="images/slid3.jpeg" alt="Image #2">
+      <img class="slide" src="images/slid4.jpeg" alt="Image #3">
+    </div>
+    <button class="prev" onclick="prevSlide()">&#10094</button>
+    <button class="next" onclick="nextSlide()">&#10095</button>
+  </div>
+
+
+  <main>
+    <div class="content">
+      <h1>BUY & <br />SELL <span>CRYPTO</span></h1>
+      <p>
+        World's biggest Cryptocurrency exchange available on web <br />as well
+        as mobile phone.
+      </p>
+      <a href="Market.html" class="btn1">Display Prices </a>
+    </div>
+    <div class="img">
+      <img src="images/crypto.png" alt="" />
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="Logo" />
+        <h2>Fiction <span class="name">Digitals</span></h2>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="Market.html">Market</a>
+        <a href="wallet.html">Wallet</a>
+        <a href="About.html">About Us</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Fiction Digitals. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+
+
+
+    const slides = document.querySelectorAll(".slides img");
+    let slideIndex = 0;
+    let intervalId = null;
+
+    document.addEventListener("DOMContentLoaded", initializeSlider);
+
+    function initializeSlider() {
+      if (slides.length > 0) {
+        slides[slideIndex].classList.add("displaySlide");
+        intervalId = setInterval(nextSlide, 3000);
+      }
+    }
+
+    function showSlide(index) {
+      if (index >= slides.length) {
+        slideIndex = 0;
+      }
+      else if (index < 0) {
+        slideIndex = slides.length - 1;
+      }
+
+      slides.forEach(slide => {
+        slide.classList.remove("displaySlide");
+      });
+      slides[slideIndex].classList.add("displaySlide");
+    }
+
+    function prevSlide() {
+      clearInterval(intervalId);
+      slideIndex--;
+      showSlide(slideIndex);
+    }
+
+    function nextSlide() {
+      slideIndex++;
+      showSlide(slideIndex);
+    }
+  </script>
+</body>
+
+</html>

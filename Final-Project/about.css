@@ -1,0 +1,535 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #0f002b;
+}
+
+nav {
+  width: 100%;
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(50deg, #ccacff 5%, #743eca 60%);
+}
+
+.logo {
+  width: 50px;
+  cursor: pointer;
+  margin-left: 30px;
+}
+nav h1 {
+  margin-left: 10px;
+  color: #743eca;
+}
+nav h1 .name {
+  color: #ff960b;
+}
+nav ul {
+  flex: 1;
+  text-align: right;
+  margin-right: 180px;
+}
+nav ul li {
+  display: inline-block;
+  margin: 10px 50px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  width: 0%;
+  height: 2px;
+  background-color: #ff960b;
+  transition: all 0.33s ease;
+  margin: auto;
+  border-radius: 20px;
+}
+nav ul li a:hover::after {
+  width: 100% !important;
+}
+nav ul li .active::after {
+  width: 100% !important;
+}
+
+.digital {
+  color: #ff960b;
+}
+
+.container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  gap: 600px;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+}
+.container h1 {
+  color: #743eca;
+}
+
+.about h2,
+.features h2 {
+  color: #743eca;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.about p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+.features ul {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  color: #333;
+}
+
+.features li {
+  background-color: #f3f0ff;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.img {
+  flex-shrink: 0;
+}
+
+.img img {
+  max-width: 400px;
+  height: auto;
+  display: block;
+}
+
+.aboutIntro {
+  padding: 80px 5% 40px;
+  background: linear-gradient(135deg, #743eca);
+  text-align: center;
+}
+
+.aboutIntro .content h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.aboutIntro .content p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1em;
+  color: #fff;
+}
+
+.missionVision {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 60px 5%;
+  background-color: #0f002b;
+  text-align: center;
+}
+
+.missionVision .box {
+  background-color: #743eca;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  flex: 1 1 45%;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.missionVision .box h2 {
+  font-size: 1.5em;
+  color: #ff960b;
+  margin-bottom: 15px;
+}
+
+.missionVision .box p {
+  font-size: 1em;
+  color: #ffffff;
+}
+.missionVision .box:hover {
+  transform: translateY(-5px);
+}
+
+.teamSection {
+  padding: 60px 5%;
+  text-align: center;
+  background-color: #0f002b;
+}
+
+.teamSection h2 {
+  font-size: 2.2em;
+  margin-bottom: 40px;
+  color: #ff960b;
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.teamMember {
+  max-width: 280px;
+  height: auto;
+  text-align: center;
+  background-color: #743eca;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  flex: 1 1 250px;
+  box-sizing: border-box;
+}
+
+.teamMember:hover {
+  transform: translateY(-5px);
+}
+
+.teamMember img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 0% 0%;
+  margin-bottom: 15px;
+}
+
+.teamMember h3 {
+  font-size: 1.2em;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.teamMember p {
+  font-size: 0.95em;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .container1 {
+    gap: 30px;
+    margin-top: 80px;
+  }
+  .img img {
+    max-width: 350px;
+  }
+  .about h2,
+  .features h2 {
+    font-size: 1.8rem;
+  }
+  .about p {
+    font-size: 1em;
+  }
+  .features li {
+    font-size: 0.9em;
+  }
+  .aboutIntro .content h1 {
+    font-size: 2.5rem;
+  }
+  .aboutIntro .content p {
+    font-size: 1em;
+  }
+  .missionVision .box {
+    max-width: 350px;
+    padding: 25px;
+  }
+  .teamMember {
+    max-width: 250px;
+  }
+  .teamMember img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 0;
+  }
+  .logo {
+    margin-left: 20px;
+  }
+  nav h1 {
+    margin-left: 20px;
+  }
+  nav ul {
+    text-align: left;
+    margin-right: 0;
+    width: 100%;
+    padding-left: 20px;
+  }
+  nav ul li {
+    display: block;
+    margin: 8px 0;
+  }
+
+  .container1 {
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 30px;
+    padding: 0 15px;
+  }
+  .container {
+    padding: 1rem;
+  }
+  .img {
+    text-align: center;
+  }
+  .img img {
+    max-width: 80%;
+  }
+  .about h2,
+  .features h2 {
+    font-size: 1.6rem;
+  }
+  .about p {
+    font-size: 0.95em;
+  }
+  .features ul {
+    grid-template-columns: 1fr;
+  }
+  .missionVision {
+    padding: 40px 15px;
+    gap: 20px;
+  }
+  .missionVision .box {
+    flex: 1 1 100%;
+    max-width: none;
+    padding: 20px;
+  }
+  .aboutIntro .content h1 {
+    font-size: 2rem;
+  }
+  .aboutIntro .content p {
+    font-size: 0.95em;
+  }
+  .teamSection {
+    padding: 40px 15px;
+  }
+  .teamSection h2 {
+    font-size: 1.8em;
+  }
+  .team {
+    gap: 20px;
+  }
+  .teamMember {
+    flex: 1 1 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .teamMember img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 40px;
+    margin-left: 15px;
+  }
+  nav h1 {
+    font-size: 1.3em;
+    margin-left: 5px;
+  }
+  nav ul {
+    padding-left: 15px;
+  }
+  nav ul li {
+    margin: 6px 0;
+  }
+  nav ul li a {
+    font-size: 0.9em;
+  }
+  .container1 {
+    margin-top: 40px;
+    padding: 0 10px;
+  }
+  .container {
+    padding: 0.8rem;
+  }
+  .about h2,
+  .features h2 {
+    font-size: 1.4rem;
+  }
+  .about p {
+    font-size: 0.9em;
+  }
+  .features li {
+    font-size: 0.85em;
+  }
+  .aboutIntro .content h1 {
+    font-size: 1.8rem;
+  }
+  .aboutIntro .content p {
+    font-size: 0.9em;
+  }
+  .missionVision {
+    padding: 30px 10px;
+    gap: 15px;
+  }
+  .missionVision .box {
+    padding: 15px;
+  }
+  .missionVision .box h2 {
+    font-size: 1.3em;
+  }
+  .missionVision .box p {
+    font-size: 0.9em;
+  }
+  .teamSection {
+    padding: 30px 10px;
+  }
+  .teamSection h2 {
+    font-size: 1.6em;
+  }
+  .team {
+    gap: 15px;
+  }
+  .teamMember {
+    padding: 15px;
+  }
+  .teamMember img {
+    width: 120px;
+    height: 120px;
+  }
+  .teamMember h3 {
+    font-size: 1.1em;
+  }
+  .teamMember p {
+    font-size: 0.85em;
+  }
+}
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  margin-left: auto;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0f002b;
+    padding-left: 20px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+}
+
+.site-footer {
+  background: linear-gradient(to right, #2f1064, #2f1064);
+  color: #fff;
+  padding: 30px;
+  font-size: 14px;
+}
+
+.footer-content {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 15px;
+}
+
+.footer-logo img {
+  width: 40px;
+}
+
+.footer-logo h2 {
+  color: #743eca;
+  font-size: 20px;
+}
+
+.footer-logo .name {
+  color: #ff960b;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ff960b;
+}
+
+.footer-bottom {
+  border-top: 1px solid #fff;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #fff;
+  margin-left: 20px;
+}
+
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-logo {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
